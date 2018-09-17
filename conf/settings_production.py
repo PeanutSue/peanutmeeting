@@ -19,9 +19,9 @@ from settings import APP_ID
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',  # 默认用mysql
-        'NAME': 'peanutmeetingPROD',                        # 数据库名 (默认与APP_ID相同)
-        'USER': 'peanutmeetingPROD',                            # 你的数据库user
-        'PASSWORD': 'peanutmeetingPROD@2018',                        # 你的数据库password
+        'NAME': 'pmeetingProd',                        # 数据库名 (默认与APP_ID相同)
+        'USER': 'pmeetingProd',                            # 你的数据库user
+        'PASSWORD': 'pmeetingProd@2018',                        # 你的数据库password
         'HOST': '172.50.18.26',                   		   # 数据库HOST
         'PORT': '3306',                        # 默认3306
     },
