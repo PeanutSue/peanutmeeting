@@ -49,4 +49,5 @@ def addMeeting(request):
     Mdesc = request.POST.get('Mdesc')
     MeetingRecord = MeetingRecord(Mname=Mname, Mtime=Mtime, Mdesc=Mdesc)
     MeetingRecord.save()
-    return render_json({'result': True, 'MeetingRecord': MeetingRecord})
+    addResult = "新增成功"
+    return render_json({'result': True, 'addResult': addResult})

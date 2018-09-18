@@ -80,6 +80,7 @@
                                             <button id="addMeeting" type="button" class="king-btn mr10  king-success">新增</button>
                                             <button type="button" class="king-btn king-default ">取消</button>
                                         </div>
+                                        <span class="king-counter-number" id="addResult"></span>
                                     </div>
                                 </form>
                             </div>
@@ -128,6 +129,9 @@
                     'Mtime':Mtime,
                     'Mdesc':Mdesc
                 },function(res){
+                    if(res.result){
+                        $("#addResult").html(res.addResult);
+                    }
                 },'json');
             })
         })
