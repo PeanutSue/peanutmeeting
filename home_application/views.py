@@ -9,14 +9,20 @@ an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express o
 See the License for the specific language governing permissions and limitations under the License.
 """
 
-from common.mymako import render_mako_context
+from common.mymako import render_mako_context,render_json
+
+from home_application.models import MultRecord
 
 
 def home(request):
     """
     首页
     """
-    return render_mako_context(request, '/home_application/home.html')
+    all_record = MultRecord.objects.all()
+    ctx = {
+        'all_record': all_record
+    }
+    return render_mako_context(request, '/home_application/home.html',ctx)
 
 
 def dev_guide(request):
@@ -33,3 +39,14 @@ def contactus(request):
     return render_mako_context(request, '/home_application/contact.html')
 
 
+
+def addMeeting(request):
+    """
+    新增会议
+    """
+    Mname = request.POST.get('Mname')
+    Mtime = request.POST.get('Mtime')
+    Mdesc = request.POST.get('Mdesc')
+    MeetingRecord = MeetingRecord(Mname=Mname, Mtime=Mtime, Mdesc=Mdesc)
+    MeetingRecord.save()
+    return render_json({'result': True, 'MeetingRecord': MeetingRecord})

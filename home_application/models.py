@@ -9,4 +9,9 @@ an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express o
 See the License for the specific language governing permissions and limitations under the License.
 """
 
-# from django.db import models
+from django.db import models
+
+class MeetingRecord(models.Model):
+	Mname = models.StringField(u"会议名称")
+	Mtime = models.StringField(u"会议时间")
+	Mdesc = models.StringField(u"会议纪要")
