@@ -44,9 +44,9 @@ def addMeeting(request):
     """
     新增会议
     """
-    Mname = request.POST.get('Mname')
-    Mtime = request.POST.get('Mtime')
-    Mdesc = request.POST.get('Mdesc')
+    Mname = char(request.POST.get('Mname'))
+    Mtime = char(request.POST.get('Mtime'))
+    Mdesc = char(request.POST.get('Mdesc'))
     MeetingRecord = MeetingRecord(Mname=Mname, Mtime=Mtime, Mdesc=Mdesc)
     MeetingRecord.save()
     addResult = "新增成功"
