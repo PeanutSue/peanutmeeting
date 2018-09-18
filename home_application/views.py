@@ -31,3 +31,15 @@ def contactus(request):
     联系我们
     """
     return render_mako_context(request, '/home_application/contact.html')
+
+
+def addMeeting(request):
+    """
+    添加会议
+    """
+    Mname = request.POST.get('Mname')
+    Mtime = request.POST.get('Mtime')
+    Mdesc = request.POST.get('Mdesc')
+    MeetingList = MultRecord(Mname=Mname,Mtime=Mtime,Mdesc=Mdesc)
+    MeetingList.save()
+    return render_json({'result':True,'MeetingList':MeetingList})
