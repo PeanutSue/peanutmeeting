@@ -43,10 +43,6 @@
                                 <img src="https://magicbox.bk.tencent.com/static_api/v3/bk/images/logo3.png" alt="" class="logo"> </a>
                         </div>
                         <div class="king-header-list list2">
-                            <ul>
-                                <li> <a href="javascript:;"><i class="glyphicon glyphicon-shopping-cart"></i></a> </li>
-                                <li> <a href="javascript:;"><i class="glyphicon glyphicon-search"></i></a> </li>
-                            </ul>
                         </div>
                         <div class="king-header-list list1">
                             <ul> </ul>
@@ -106,34 +102,7 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td style="width: 100px;">1</td>
-                                            <td style="width: 20%;">版本更新</td>
-                                            <td style="width: 20%;">完成</td>
-                                            <td style="width: 20%;">管理员</td>
-                                            <td>2015-09-20</td>
-                                        </tr>
-                                        <tr>
-                                            <td style="width: 100px;">2</td>
-                                            <td style="width: 20%;">数据备份</td>
-                                            <td style="width: 20%;">完成</td>
-                                            <td style="width: 20%;">管理员</td>
-                                            <td>2015-09-20</td>
-                                        </tr>
-                                        <tr>
-                                            <td style="width: 100px;">3</td>
-                                            <td style="width: 20%;">定时任务</td>
-                                            <td style="width: 20%;">完成</td>
-                                            <td style="width: 20%;">管理员</td>
-                                            <td>2015-09-20</td>
-                                        </tr>
-                                        <tr>
-                                            <td style="width: 100px;">4</td>
-                                            <td style="width: 20%;">修复bug</td>
-                                            <td style="width: 20%;">完成</td>
-                                            <td style="width: 20%;">管理员</td>
-                                            <td>2015-09-20</td>
-                                        </tr>
+
                                     </tbody>
                                 </table>
                                 <!-- 设置面板Start -->
@@ -164,37 +133,6 @@
         </div>
     </div>
     <script>
-        $(function(){
-                function renderTpl(str, cfg) {
-                    var re = /(#(.+?)#)/g;
-
-                    return str.replace(re, function() {
-                        var val = cfg[arguments[2]]+'';
-                        if(typeof val == 'undefined') {
-                            val = '';
-                        }
-                        return val;
-                    });
-                }
-
-                // 异步请求后台数据
-                $.ajax({
-                    url: 'https://magicbox.bk.tencent.com/static_api/v3/components/table6/data.json',
-                    type: 'GET',
-                    success: function(res){
-                        var _html = ' ';
-                        var list = res.items;
-                        var tpl = $('#tpl_1537230111780').html();
-                        var headerTpl =  $('#header_tpl_1537230111780').html();
-                        for (var i=0,len=list.length; i < len; i++){
-                            var item = list[i];
-                            _html += renderTpl(tpl, item)
-                        }
-                        $('#code_1537230111780 tbody').html(_html);
-                        $('.ranger-box thead').html(renderTpl(headerTpl,res.catalogues));
-                    }
-                });
-            });
     </script>
 </body>
 
