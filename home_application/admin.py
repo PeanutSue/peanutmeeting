@@ -14,8 +14,9 @@ See the License for the specific language governing permissions and limitations 
 
 # import from lib
 # ===============================================================================
-# from django.contrib import admin
+from django.contrib import admin
 # from apps.__.models import aaaa
+from home_application.models import MeetingRecord
 #
-# admin.site.register(aaaa)
+admin.site.register(MeetingRecord)
 # ===============================================================================

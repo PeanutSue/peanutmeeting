@@ -124,14 +124,12 @@
                 var Mname = $("#Mname").val();
                 var Mtime = $("#Mtime").val();
                 var Mdesc = $("#Mdesc").val();
-                $.post("${SITE_URL}addMeeting/",{
+                $.get('/addMeeting/',{
                     'Mname':Mname,
                     'Mtime':Mtime,
                     'Mdesc':Mdesc
                 },function(res){
-                    if(res.result){
-                        $("#addResult").html(res.addResult);
-                    }
+                    
                 },'json');
             })
         })
