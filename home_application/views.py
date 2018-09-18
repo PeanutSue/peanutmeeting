@@ -44,10 +44,10 @@ def addMeeting(request):
     """
     新增会议
     """
-    Mname = char(request.POST.get('Mname'))
-    Mtime = char(request.POST.get('Mtime'))
-    Mdesc = char(request.POST.get('Mdesc'))
-    MeetingRecord = MeetingRecord(Mname=Mname, Mtime=Mtime, Mdesc=Mdesc)
-    MeetingRecord.save()
+    Mname = request.POST.get('Mname')
+    Mtime = request.POST.get('Mtime')
+    Mdesc = request.POST.get('Mdesc')
+    M_Record = MeetingRecord(Mname=Mname, Mtime=Mtime, Mdesc=Mdesc)
+    M_Record.save()
     addResult = "新增成功"
     return render_json({'result': True, 'addResult': addResult})
