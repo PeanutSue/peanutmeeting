@@ -12,6 +12,6 @@ See the License for the specific language governing permissions and limitations 
 from django.db import models
 
 class MeetingRecord(models.Model):
-	Mname = models.CharField(u"会议名称")
-	Mtime = models.CharField(u"会议时间")
-	Mdesc = models.CharField(u"会议纪要")
+	Mname = models.CharField(u"会议名称", max_length=64)
+	Mtime = models.CharField(u"会议时间", max_length=64)
+	Mdesc = models.CharField(u"会议纪要", max_length=256)
