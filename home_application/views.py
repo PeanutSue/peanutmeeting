@@ -11,14 +11,14 @@ See the License for the specific language governing permissions and limitations 
 
 from common.mymako import render_mako_context,render_json
 
-from home_application.models import MultRecord
+from home_application.models import MeetingRecord
 
 
 def home(request):
     """
     首页
     """
-    all_record = MultRecord.objects.all()
+    all_record = MeetingRecord.objects.all()
     ctx = {
         'all_record': all_record
     }
