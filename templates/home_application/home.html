@@ -124,7 +124,7 @@
                 var Mname = $("#Mname").val();
                 var Mtime = $("#Mtime").val();
                 var Mdesc = $("#Mdesc").val();
-                $.getJSON("${SITE_URL}addMeeting/",{
+                $.post("${SITE_URL}addMeeting/",{
                     'Mname':Mname,
                     'Mtime':Mtime,
                     'Mdesc':Mdesc
